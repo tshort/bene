@@ -1,0 +1,104 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h3>HTML/EPUB tables with <a href="https://github.com/tshort/tblr/">tblr</a></h3>
+    <style>
+      
+        table { border-collapse: collapse; font-family: Arial, sans-serif; }
+        th, td { padding: 0.5rem 0.75rem; border: 1px solid #ccc; }
+        th { background: #eee; text-align: left; }
+        td.num { white-space: nowrap; }
+      
+        /* Grid container for each number */
+        .decimal-cell {
+          display: inline-grid;
+          align-items: baseline;
+        }
+        .decimal-cell span {
+          white-space: pre-wrap;
+        }
+        .cell-right{ text-align: right; }
+        .cell-left{ text-align: left; padding-left: 0.0em; }
+    </style>
+    <p>Decimal-aligned table:</p>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="2">Aligned Columns</th>
+        </tr>
+        <tr>
+          <th>A</th>
+          <th>B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>alpha</td>
+          <td></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:9ch 8ch"><span class="cell-right">hello</span><span class="cell-left"></span></span></td>
+        </tr>
+        <tr>
+          <td>beta</td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:5ch 7ch"><span class="cell-right">10000</span><span class="cell-left"></span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:9ch 8ch"><span class="cell-right"></span><span class="cell-left">hello</span></span></td>
+        </tr>
+        <tr>
+          <td>gamma</td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:5ch 7ch"><span class="cell-right">0</span><span class="cell-left">.12345</span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:9ch 8ch"><span class="cell-right">3</span><span class="cell-left">x</span></span></td>
+        </tr>
+        <tr>
+          <td>delta</td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:5ch 7ch"><span class="cell-right"></span><span class="cell-left">.1</span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:9ch 8ch"><span class="cell-right">30</span><span class="cell-left">. mi.</span></span></td>
+        </tr>
+        <tr>
+          <td>epsilon</td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:5ch 7ch"><span class="cell-right">1</span><span class="cell-left">.00</span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:9ch 8ch"><span class="cell-right">100,000</span><span class="cell-left"> sq. mi.</span></span></td>
+        </tr>
+        <tr>
+          <td>zeta</td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:5ch 7ch"><span class="cell-right">300</span><span class="cell-left">.</span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:9ch 8ch"><span class="cell-right">192.168.1</span><span class="cell-left">.1 ip</span></span></td>
+        </tr>
+        <tr>
+          <td>eta</td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:5ch 7ch"><span class="cell-right">-0</span><span class="cell-left">.999999</span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:9ch 8ch"><span class="cell-right">v1.0</span><span class="cell-left">.2</span></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Table generated with custom alignments:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Polar</th>
+          <th>Complex</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:4ch 2ch 1ch 4ch 3ch"><span class="cell-right">-130</span><span class="cell-left">.5</span><span class="cell-right"></span><span class="cell-right"></span><span class="cell-left"></span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:3ch 2ch 3ch 3ch 2ch"><span class="cell-right">130</span><span class="cell-left">.5</span><span class="cell-right"></span><span class="cell-right"></span><span class="cell-left"></span></span></td>
+        </tr>
+        <tr>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:4ch 2ch 1ch 4ch 3ch"><span class="cell-right">50</span><span class="cell-left">.2</span><span class="cell-right">∠</span><span class="cell-right">120</span><span class="cell-left">.3°</span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:3ch 2ch 3ch 3ch 2ch"><span class="cell-right">50</span><span class="cell-left">.2</span><span class="cell-right">+ j</span><span class="cell-right">90</span><span class="cell-left">.3</span></span></td>
+        </tr>
+        <tr>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:4ch 2ch 1ch 4ch 3ch"><span class="cell-right">100</span><span class="cell-left"></span><span class="cell-right">∠</span><span class="cell-right">-120</span><span class="cell-left">°</span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:3ch 2ch 3ch 3ch 2ch"><span class="cell-right">100</span><span class="cell-left"></span><span class="cell-right">- j</span><span class="cell-right">110</span><span class="cell-left"></span></span></td>
+        </tr>
+        <tr>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:4ch 2ch 1ch 4ch 3ch"><span class="cell-right">2</span><span class="cell-left">.3</span><span class="cell-right">∠</span><span class="cell-right">1</span><span class="cell-left">.2°</span></span></td>
+          <td><span class="decimal-cell" role="text" style="grid-template-columns:3ch 2ch 3ch 3ch 2ch"><span class="cell-right">-90</span><span class="cell-left"></span><span class="cell-right">- j</span><span class="cell-right">120</span><span class="cell-left"></span></span></td>
+        </tr>
+      </tbody>
+    </table>
+  
+
+</body></html>
